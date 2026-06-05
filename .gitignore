@@ -1,0 +1,5 @@
+# .gitignore
+*.log
+*.bak
+*.disabled
+.vscode/

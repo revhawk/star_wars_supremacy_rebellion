@@ -1,6 +1,6 @@
 # Star Wars Supremacy / Rebellion: Linux Fullscreen Scaling History
 
-This document serves as a local history of the configuration changes and structural workarounds applied to resolve resolution scaling, rendering instabilities, and palette bugs for *Star Wars Supremacy* running on Ubuntu via Steam Proton.
+This document serves as a local history of the configuration changes and structural workarounds applied to resolve resolution scaling, rendering instabilities, and palette bugs for *Star Wars Supremacy* running on Ubuntu via Steam Proton (verified using **Proton 8.0**).
 
 ![Star Wars Supremacy scaled and running under Gamescope on Linux](working_gamescope_scaling.png)
 
@@ -43,10 +43,14 @@ To run the game sandboxed inside Gamescope, configure the launch options in Stea
    ```
    *(Note: Feel free to adjust the output width `-W` and height `-H` to match your screen resolution, e.g. `-W 2560 -H 1440` for 1440p monitors, or remove `-f` if you prefer windowed mode).*
 
+   *(Keyboard Shortcut: Gamescope captures mouse movement and traps the cursor inside the upscaled frame. For users running dual monitors or switching tasks, press `Super + F` to toggle Gamescope between borderless fullscreen and windowed modes natively without killing the execution thread).*
+
 ![Steam Launch Options configuration window](steam_launch_options.png)
 
 ---
 
 ## Resources & Acknowledgments
 * [StarWarsRebellionEditor.NET](https://github.com/MetasharpNet/StarWarsRebellionEditor.NET/tree/master) - A fantastic resource that provided some excellent design ideas and technical reference points.
+* [Valve Proton Issue Tracker: Thread #3915](https://github.com/ValveSoftware/Proton/issues/3915) - The official compatibility issue tracker documenting Direct3D Retained Mode limitations, 8-bit palette bugs, and 3D tactical map crash discussions for this game.
+* [Star Wars Rebellion 25th Anniversary Mod Overview](https://www.youtube.com/watch?v=2QI-di2l4S8) - A video overview showcasing advanced graphical customization, canonical asset swaps, and user interface modifications created using modding tools once the translation layer is stabilized.
 
