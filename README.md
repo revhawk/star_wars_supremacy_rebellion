@@ -38,3 +38,9 @@ To run the game sandboxed inside Gamescope, configure the launch options in Stea
    gamescope -w 640 -h 480 -W 1920 -H 1080 -f -r 60 -- %command%
    ```
    *(Note: Feel free to adjust the output width `-W` and height `-H` to match your screen resolution, e.g. `-W 2560 -H 1440` for 1440p monitors, or remove `-f` if you prefer windowed mode).*
+
+---
+
+## Resources & Acknowledgments
+* [StarWarsRebellionEditor.NET](https://github.com/MetasharpNet/StarWarsRebellionEditor.NET/tree/master) - A fantastic resource that provided some excellent design ideas and technical reference points.
+
