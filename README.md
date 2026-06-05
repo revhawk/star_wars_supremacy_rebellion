@@ -2,6 +2,8 @@
 
 This document serves as a local history of the configuration changes and structural workarounds applied to resolve resolution scaling, rendering instabilities, and palette bugs for *Star Wars Supremacy* running on Ubuntu via Steam Proton.
 
+![Star Wars Supremacy scaled and running under Gamescope on Linux](working_gamescope_scaling.png)
+
 Official Project Repository: https://github.com/revhawk/star_wars_supremacy_rebellion
 
 ---
@@ -28,6 +30,8 @@ cd ~/Games/SUPREMACY/supremacy/
 mv ddraw.dll ddraw.dll.disabled 2>/dev/null
 mv d3dimm.dll d3dimm.dll.disabled 2>/dev/null
 ```
+
+![File manager showing renamed DLL overrides to disable dgVoodoo](dll_override_fix.png)
 
 ### Step 2: Configuring Steam Launch Options for Gamescope
 To run the game sandboxed inside Gamescope, configure the launch options in Steam:
