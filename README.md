@@ -39,9 +39,11 @@ To run the game sandboxed inside Gamescope, configure the launch options in Stea
 2. Under the **General** tab, locate the **Launch Options** text field.
 3. Add the following command line:
    ```bash
-   gamescope -w 640 -h 480 -W 1920 -H 1080 -f -r 60 -- %command%
+   gamescope -w 640 -h 480 -W 1920 -H 1080 -S stretch -f -- %command%
    ```
    *(Note: Feel free to adjust the output width `-W` and height `-H` to match your screen resolution, e.g. `-W 2560 -H 1440` for 1440p monitors, or remove `-f` if you prefer windowed mode).*
+
+![Steam Launch Options configuration window](steam_launch_options.png)
 
 ---
 
