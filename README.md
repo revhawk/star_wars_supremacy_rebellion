@@ -4,6 +4,8 @@ This document serves as a local history of the configuration changes and structu
 
 ![Star Wars Supremacy scaled and running under Gamescope on Linux](working_gamescope_scaling.png)
 
+*For visual inspiration of a fully modded and stabilized game, watch the [Star Wars Rebellion 25th Anniversary Mod Overview on YouTube](https://www.youtube.com/watch?v=2QI-di2l4S8).*
+
 Official Project Repository: https://github.com/revhawk/star_wars_supremacy_rebellion
 
 ---
