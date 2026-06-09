@@ -51,6 +51,30 @@ To run the game sandboxed inside Gamescope, configure the launch options in Stea
 
 ---
 
+## Troubleshooting & Post-Installation Tweaks
+
+### 1. Save System Failure
+If the game silently fails to save, it is because of case-sensitivity issues and the missing legacy directory expected by the 1998 engine. 
+
+To resolve this, manually create the `SaveGame` folder inside the installation path and set appropriate permissions:
+```bash
+cd ~/Games/SUPREMACY/supremacy/
+mkdir -p SaveGame
+chmod -R 755 ~/Games/SUPREMACY/supremacy/
+```
+
+### 2. Tactical 3D Battle Crash (Direct3D Retained Mode)
+While the 2D strategic map runs smoothly, loading a 3D tactical battle will instantly crash the game. This is because the 3D map relies on **Direct3D Retained Mode** (`d3drm.dll`), which is absent in modern Proton environments.
+
+You have two solutions:
+* **The "Grand Admiral" Approach:** Auto-resolve all tactical battles. This bypasses the 3D engine completely and keeps the focus purely on the grand strategy mechanics.
+* **The Library Injection Fix:** Drop a native copy of `d3drm.dll` (which can be found under the DirectX setup folder on the game installation media: `/directx/d3drm.dll`) into the active game directory (`~/Games/SUPREMACY/supremacy/`). Proton will load the DLL and enable 3D battles to render. If it doesn't load automatically, prepend `WINEDLLOVERRIDES="d3drm=n,b"` to your launch options:
+  ```bash
+  WINEDLLOVERRIDES="d3drm=n,b" gamescope -w 640 -h 480 -W 1920 -H 1080 -S stretch -f -- %command%
+  ```
+
+---
+
 ## Resources & Acknowledgments
 * [StarWarsRebellionEditor.NET](https://github.com/MetasharpNet/StarWarsRebellionEditor.NET/tree/master) - A fantastic resource that provided some excellent design ideas and technical reference points.
 * [Valve Proton Issue Tracker: Thread #3915](https://github.com/ValveSoftware/Proton/issues/3915) - The official compatibility issue tracker documenting Direct3D Retained Mode limitations, 8-bit palette bugs, and 3D tactical map crash discussions for this game.
