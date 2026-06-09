@@ -73,6 +73,16 @@ You have two solutions:
   WINEDLLOVERRIDES="d3drm=n,b" gamescope -w 640 -h 480 -W 1920 -H 1080 -S stretch -f -- %command%
   ```
 
+### 3. Steam Package Install Loop (Missing 32-bit Graphics Libraries)
+If Steam repeatedly prompts you to install additional packages (such as `libc6:i386`, `libgl1:i386`, `steam-libs-i386:i386`) every time you launch, it is usually because of a package version conflict on the host system. 
+
+On Ubuntu, an installed version of `libcap2` with an epoch mismatch (e.g., `100:2.48-1`) prevents `libcap2:i386` from installing. To resolve this, downgrade `libcap2` to the official repository version and install the required Steam packages:
+```bash
+sudo apt-get update
+sudo apt-get install -y libcap2=1:2.75-7ubuntu2.2 libc6:amd64 libc6:i386 libegl1:amd64 libegl1:i386 libgbm1:amd64 libgbm1:i386 libgl1-mesa-dri:amd64 libgl1-mesa-dri:i386 libgl1:amd64 libgl1:i386 steam-libs-i386:i386
+```
+*(Note: Adjust the `libcap2` version to match your specific Ubuntu release if you are not running Ubuntu 25.10).*
+
 ---
 
 ## Resources & Acknowledgments
